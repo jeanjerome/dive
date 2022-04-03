@@ -6,19 +6,16 @@ builds:
     env:
       - CGO_ENABLED=0
     goos:
-      - windows
       - darwin
-      - linux
     goarch:
-      - amd64
       - arm64
     ldflags: -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.buildTime={{.Date}}`.
 
 brews:
   - github:
-      owner: wagoodman
+      owner: jeanjerome
       name: homebrew-dive
-    homepage: "https://github.com/wagoodman/dive/"
+    homepage: "https://github.com/jeanjerome/dive/"
     description: "A tool for exploring each layer in a docker image"
 
 archives:
@@ -29,9 +26,9 @@ archives:
 
 nfpms:
   - license: MIT
-    maintainer: Alex Goodman
+    maintainer: Alex Goodman (modified by jeanjerome)
     homepage: https://github.com/wagoodman/dive/
-    description: "A tool for exploring each layer in a docker image"
+    description: "A tool for exploring each layer in a docker image (arm64 only)"
     formats:
       - rpm
       - deb
